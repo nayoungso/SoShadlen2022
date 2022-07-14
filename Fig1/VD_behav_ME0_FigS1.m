@@ -4,15 +4,17 @@ figure(2); clf;
 for monkey_id = 1:2
     
     clear filename
-    if monkey_id==1
-        path = ['~/Dropbox/plxdata/RDM_IEM/BrBehav/ME/'];
+    path = ['~/Variable duration task/BehaviorOnly/'];
+    
+    if monkey_id==1    
+        filename = dir(strcat(path,'Br*behav_me.mat'))
         titlestring = 'Monkey B'
     else
-        path = ['~/Dropbox/plxdata/RDM_IEM/HBehav/ME/'];
+        filename = dir(strcat(path,'H*behav_me.mat'))
         titlestring = 'Monkey H'
     end
     
-filename = dir(strcat(path,'*behav_me.mat'))
+
 
 clear trials_temp
 trialno = 0;
