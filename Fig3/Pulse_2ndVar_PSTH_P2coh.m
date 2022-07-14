@@ -2,12 +2,12 @@ function Pulse_2ndVar_PSTH_P2coh
 
 % Fig 3G
 
-path = ['~/Dropbox/plxdata/Pulse/Vprobe/prelim_groups/coh_dep_dynamics_based_consec3_p_05_base_adjusted/allo/follower/']
+path = ['~/Two-pulse task, 2nd variant/Supporter']
 
-filename_a = dir(strcat(path,'/34/r/','*_DSP*.mat'));
-filename_b = dir(strcat(path,'/34/g/','*_DSP*.mat'));
-filename_c = dir(strcat(path,'/35/r/','*_DSP*.mat'));
-filename_d = dir(strcat(path,'/35/g/','*_DSP*.mat'));
+filename_a = dir(strcat(path,'/A/r/','*_DSP*.mat'));    % configuration A, up/right-preferring neurons
+filename_b = dir(strcat(path,'/A/g/','*_DSP*.mat'));    % configuration A, down/left-preferring neurons
+filename_c = dir(strcat(path,'/B/r/','*_DSP*.mat'));    % configuration B, up/right-preferring neurons
+filename_d = dir(strcat(path,'/B/g/','*_DSP*.mat'));    % configuration B, down/left-preferring neurons
 
 
 binwidth = 100;
@@ -30,13 +30,13 @@ for p=1:4
     clear filename
     
     if p==1
-        taskid = 34; filename = filename_a; filepath = [path,'/34/r/'];
+        taskid = 34; filename = filename_a; filepath = [path,'/A/r/'];
     elseif p==2
-        taskid = 34; filename = filename_b; filepath = [path,'/34/g/'];
+        taskid = 34; filename = filename_b; filepath = [path,'/A/g/'];
     elseif p==3
-        taskid = 35; filename = filename_c; filepath = [path,'/35/r/'];
+        taskid = 35; filename = filename_c; filepath = [path,'/B/r/'];
     elseif p==4
-        taskid = 35; filename = filename_d; filepath = [path,'/35/g/'];
+        taskid = 35; filename = filename_d; filepath = [path,'/B/g/'];
     end
     
     for i = 1:length(filename)
