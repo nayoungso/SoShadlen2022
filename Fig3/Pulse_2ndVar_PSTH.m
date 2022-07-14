@@ -1,18 +1,18 @@
 function Pulse_2ndVar_PSTH(celltype)
 
 if celltype==1
-    groupname = 'leader';
+    groupname = 'Leader';
 elseif celltype==2
-    groupname = 'follower';
+    groupname = 'Supporter';
 end
 
-path = ['~/Dropbox/plxdata/Pulse/Vprobe/prelim_groups/coh_dep_dynamics_based_consec3_p_05_base_adjusted/allo/' groupname '/'];
+path = ['~/Two-pulse task, 2nd variant/' groupname '/'];
 
+filename_a = dir(strcat(path,'/A/r/','*_DSP*.mat'));    % configuration A, up/right-preferring neurons
+filename_b = dir(strcat(path,'/A/g/','*_DSP*.mat'));    % configuration A, down/left-preferring neurons
+filename_c = dir(strcat(path,'/B/r/','*_DSP*.mat'));    % configuration B, up/right-preferring neurons
+filename_d = dir(strcat(path,'/B/g/','*_DSP*.mat'));    % configuration B, down/left-preferring neurons
 
-filename_a = dir(strcat(path,'34/r/','*_DSP*.mat'))
-filename_b = dir(strcat(path,'34/g/','*_DSP*.mat'))
-filename_c = dir(strcat(path,'35/r/','*_DSP*.mat'))
-filename_d = dir(strcat(path,'35/g/','*_DSP*.mat'))
 
 binwidth = 100;
 step = 20;
@@ -37,13 +37,13 @@ for p = 1:4
     clear filename
     
     if p==1
-        taskid = 34; filename = filename_a; filepath = [path,'/34/r/']; % neurons preferring right/up target in config A
+        taskid = 34; filename = filename_a; filepath = [path,'/A/r/']; % neurons preferring right/up target in config A
     elseif p==2
-        taskid = 34; filename = filename_b; filepath = [path,'/34/g/']; % neurons preferring left/down target in config A
+        taskid = 34; filename = filename_b; filepath = [path,'/A/g/']; % neurons preferring left/down target in config A
     elseif p==3
-        taskid = 35; filename = filename_c; filepath = [path,'/35/r/']; % neurons preferring right/up target in config B
+        taskid = 35; filename = filename_c; filepath = [path,'/B/r/']; % neurons preferring right/up target in config B
     elseif p==4
-        taskid = 35; filename = filename_d; filepath = [path,'/35/g/']; % neurons preferring left/down target in config B
+        taskid = 35; filename = filename_d; filepath = [path,'/B/g/']; % neurons preferring left/down target in config B
     end
     
     for i = 1:length(filename)
