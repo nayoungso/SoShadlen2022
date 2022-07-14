@@ -3,18 +3,18 @@ function VD_dec_BU(celltype)
 % celltype = 1 (leader) / 2 (supporter)
 
 if celltype==1
-    groupname = 'classic_leader';
+    groupname = 'Leader';
 elseif celltype==2
-    groupname = 'classic_supporter';
+    groupname = 'Supporter';
 end
 
 
-path = ['~/Dropbox/plxdata/RDM_IEM/groups/ranksum_dynamics_based_consec3_p_05_base_adjusted/' groupname '/'];
+path = ['~/Variable duration task/' groupname '/'];
 
-filename_a = dir(strcat(path,'20/r/','*DSP*.mat'))
-filename_b = dir(strcat(path,'20/g/','*DSP*.mat'))
-filename_c = dir(strcat(path,'21/r/','*DSP*.mat'))
-filename_d = dir(strcat(path,'21/g/','*DSP*.mat'))
+filename_a = dir(strcat(path,'A/r/','*DSP*.mat'))   % configuration A, up/right-preferring neurons
+filename_b = dir(strcat(path,'A/g/','*DSP*.mat'))   % configuration A, down/left-preferring neurons
+filename_c = dir(strcat(path,'B/r/','*DSP*.mat'))   % configuration B, up/right-preferring neurons
+filename_d = dir(strcat(path,'B/g/','*DSP*.mat'))   % configuration B, down/left-preferring neurons
 
 % for buildup rate calculation as well as mean FR
 initial_t = 160;    % based on the ranksum test (IEM_new_putativeDec_ranksum.m)
@@ -30,13 +30,13 @@ G1no = zeros(1,length(coh_set));
 for p = 1:4
     clear filename
     if p==1
-        taskid = 20; filename = filename_a; filepath = [path,'/20/r/'];
+        taskid = 20; filename = filename_a; filepath = [path,'/A/r/'];
     elseif p==2
-        taskid = 20; filename = filename_b; filepath = [path,'/20/g/'];
+        taskid = 20; filename = filename_b; filepath = [path,'/A/g/'];
     elseif p==3
-        taskid = 21; filename = filename_c; filepath = [path,'/21/r/'];
+        taskid = 21; filename = filename_c; filepath = [path,'/B/r/'];
     elseif p==4
-        taskid = 21; filename = filename_d; filepath = [path,'/21/g/'];
+        taskid = 21; filename = filename_d; filepath = [path,'/B/g/'];
     end
     
     
