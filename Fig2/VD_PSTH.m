@@ -1,17 +1,17 @@
 function VD_PSTH(celltype)
 
 if celltype==1
-    groupname = 'classic_leader';
+    groupname = 'Leader';
 elseif celltype==2
-    groupname = 'classic_supporter';
+    groupname = 'Supporter';
 end
     
-path = ['~/Dropbox/plxdata/RDM_IEM/groups/ranksum_dynamics_based_consec3_p_05_base_adjusted/' groupname '/']
+path = ['~/Variable duration task/' groupname '/']
 
-filename_a = dir(strcat(path,'20/r/','*DSP*.mat'))
-filename_b = dir(strcat(path,'20/g/','*DSP*.mat'))
-filename_c = dir(strcat(path,'21/r/','*DSP*.mat'))
-filename_d = dir(strcat(path,'21/g/','*DSP*.mat'))
+filename_a = dir(strcat(path,'A/r/','*DSP*.mat'))
+filename_b = dir(strcat(path,'A/g/','*DSP*.mat'))
+filename_c = dir(strcat(path,'B/r/','*DSP*.mat'))
+filename_d = dir(strcat(path,'B/g/','*DSP*.mat'))
 
 
 cutoff = 250;    % 250ms after dots off (for attrition rule application)
@@ -38,13 +38,13 @@ for p = 1:4
     clear filename
     
     if p==1
-        taskid = 20; filename = filename_a; filepath = [path,'/20/r/']; % neurons preferring right/up target in config A
+        taskid = 20; filename = filename_a; filepath = [path,'/A/r/']; % neurons preferring right/up target in config A
     elseif p==2
-        taskid = 20; filename = filename_b; filepath = [path,'/20/g/']; % neurons preferring left/down target in config A
+        taskid = 20; filename = filename_b; filepath = [path,'/A/g/']; % neurons preferring left/down target in config A
     elseif p==3
-        taskid = 21; filename = filename_c; filepath = [path,'/21/r/']; % neurons preferring right/up target in config B
+        taskid = 21; filename = filename_c; filepath = [path,'/B/r/']; % neurons preferring right/up target in config B
     elseif p==4
-        taskid = 21; filename = filename_d; filepath = [path,'/21/g/']; % neurons preferring left/down target in config B
+        taskid = 21; filename = filename_d; filepath = [path,'/B/g/']; % neurons preferring left/down target in config B
     end
     
     
