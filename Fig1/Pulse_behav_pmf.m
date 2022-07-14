@@ -5,8 +5,6 @@ function Pulse_behav_pmf(task_var)
 
 figure(32); clf;
 
-path = ['~/Dropbox/plxdata/Pulse/Vprobe/Behav/'];
-
 for monkey_id = 1:2
     
     clear filename
@@ -14,10 +12,12 @@ for monkey_id = 1:2
     if monkey_id==1
         
         if task_var==1
+            path = '~/Two-pulse task, 1st variant/BehaviorOnly/';
             filename = dir(strcat(path,'Br*behav.mat'))
             allo_ind = 0;
             titlestring = 'Monkey B, 1^{st} variant';
         else
+            path = '~/Two-pulse task, 2nd variant/BehaviorOnly/';
             filename = dir(strcat(path,'Br*allo*behav.mat'))
             allo_ind =1;
             titlestring = 'Monkey B, 2^{nd} variant';
@@ -25,10 +25,12 @@ for monkey_id = 1:2
     else
         
         if task_var==1
+            path = '~/Two-pulse task, 1st variant/BehaviorOnly/';
             filename = dir(strcat(path,'H*behav.mat'))
             allo_ind = 0;
             titlestring = 'Monkey H, 1^{st} variant';
         else
+            path = '~/Two-pulse task, 2nd variant/BehaviorOnly/';
             filename = dir(strcat(path,'H*allo*behav.mat'))
             allo_ind =1;
             titlestring = 'Monkey H, 2^{nd} variant';
