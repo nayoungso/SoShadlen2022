@@ -15,13 +15,12 @@ simulno = 10;
 
 
 %% actual data
-path = ['~/Dropbox/plxdata/Pulse/Vprobe/Behav/'];
 
 if task_var_id==1
-    %filename = dir(strcat(path,'*',monkey_id,'*Pulse_behav.mat'));
+    path = '~/Two-pulse task, 1st variant/BehaviorOnly/';
     filename = dir(strcat(path,monkey_id,'*Pulse_behav.mat'));
 elseif task_var_id==2
-    %filename = dir(strcat(path,'*',monkey_id,'*allo*Pulse_behav.mat'));
+    path = '~/Two-pulse task, 2nd variant/BehaviorOnly/';
     filename = dir(strcat(path,monkey_id,'*allo*Pulse_behav.mat'));
 end
 
