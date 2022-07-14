@@ -11,7 +11,7 @@
 % R2 = (a0+a1C1)+b1C2   (eq.9)
 
 
-path = ['~/Two-pulse task, 1st variant/']
+path = ['~/Two-pulse task, 1st variant/Leader/']
 
 filename_a = dir(strcat(path,'/A/r/','*_DSP*.mat'));    % configuration A, up/right-preferring neurons
 filename_b = dir(strcat(path,'/A/g/','*_DSP*.mat'));    % configuration A, down/left-preferring neurons
