@@ -2,7 +2,7 @@ function Pulse_2ndVar_LSpair_corr(phi)
 
 % phi=0.6 to create Figure 4B 
 
-simpair_path = '~/Dropbox/plxdata/Pulse/Vprobe/prelim_groups/coh_dep_dynamics_based_consec3_p_05_base_adjusted/allo/simpairs/';
+simpair_path = ['~/Two-pulse task, 2nd variant/SimPair/']
 simpair_ref_file = [simpair_path,'Kendall_based_simpair_allo_p_05_consec3.mat'];
 
 load(simpair_ref_file) % information for each pair (e.g., data path, the time when the supporter starts to show decision-related activity
