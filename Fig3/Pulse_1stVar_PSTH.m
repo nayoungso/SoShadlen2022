@@ -6,7 +6,7 @@ elseif celltype==2
     groupname = 'Supporter';
 end
     
-path = ['~/Two-pulse task, 1st variant/']
+path = ['~/Two-pulse task, 1st variant/',groupname]
 
 filename_a = dir(strcat(path,'/A/r/','*_DSP*.mat'));    % configuration A, up/right-preferring neurons
 filename_b = dir(strcat(path,'/A/g/','*_DSP*.mat'));    % configuration A, down/left-preferring neurons
